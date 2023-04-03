@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+const Father = styled.div`
+  display:flex;  
+`;
+
+const Box1 = styled.div`
+  background:skyblue; 
+  width:100px; 
+  height:100px;
+`;
+
+const Box2 = styled.div`
+  background:red; 
+  width:100px; 
+  height:100px;
+`;
+
+const Text = styled.h1`
+  color: red;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Father>
+      <Box1>
+        <Text>hi!</Text>
+      </Box1>
+      <Box2 />
+    </Father>
   );
 }
 
