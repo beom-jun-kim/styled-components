@@ -1,35 +1,44 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-const Father = styled.div`
-  display:flex;  
+const Target = styled.span`
+  font-size: 20px;
 `;
 
-const Box1 = styled.div`
-  background:skyblue; 
-  width:100px; 
-  height:100px;
+const Wrapper = styled.div`
+  display: flex;
 `;
 
-const Box2 = styled.div`
-  background:red; 
-  width:100px; 
-  height:100px;
+const ani = keyframes`
+  form {
+    transform:translateX(0);
+  }
+  to {
+    /* transform:translateX(500px); */
+  }
 `;
 
-const Text = styled.h1`
-  color: red;
+const Box = styled.div`
+  height: 100px;
+  width: 100px;
+  background: skyblue;
+  animation: ${ani} 3s ease-in infinite;
+  ${Target} {
+    &:hover{
+      font-size: 30px;
+    }
+  }
 `;
 
 function App() {
   return (
-    <Father>
-      <Box1>
-        <Text>hi!</Text>
-      </Box1>
-      <Box2 />
-    </Father>
+    <Wrapper>
+      <Box>
+        <Target as="p">hi!</Target>
+      </Box>
+      <Target>hello!</Target>
+    </Wrapper>
   );
 }
 
