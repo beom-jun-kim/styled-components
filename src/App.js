@@ -2,12 +2,18 @@ import styled, { keyframes } from "styled-components";
 import React from "react";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-const Target = styled.span`
-  font-size: 20px;
+const Title = styled.span`
+  color: ${(prop) => prop.theme.textColor};
+  font-size: 5rem;
+  transition: .5s;
 `;
 
 const Wrapper = styled.div`
   display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: ${(prop) => prop.theme.backgroundColor};
 `;
 
 const ani = keyframes`
@@ -20,12 +26,12 @@ const ani = keyframes`
 `;
 
 const Box = styled.div`
-  height: 100px;
-  width: 100px;
-  background: skyblue;
+  /* height: 100px;
+  width: 100px; */
+  /* background: skyblue; */
   animation: ${ani} 3s ease-in infinite;
-  ${Target} {
-    &:hover{
+  ${Title} {
+    &:hover {
       font-size: 30px;
     }
   }
@@ -35,9 +41,8 @@ function App() {
   return (
     <Wrapper>
       <Box>
-        <Target as="p">hi!</Target>
+        <Title as="p">Hello</Title>
       </Box>
-      <Target>hello!</Target>
     </Wrapper>
   );
 }
