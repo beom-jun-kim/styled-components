@@ -1,10 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { ThemeProvider } from "styled-components";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const dartTheme = {
+  textColor:"Whitesmoke",
+  backgroundColor:"#111",
+}
+
+const lightTheme = {
+  textColor:"#111",
+  backgroundColor:"Whitesmoke",
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={dartTheme}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>
 );
